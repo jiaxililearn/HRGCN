@@ -1,3 +1,9 @@
+# setting env
+sudo update-alternatives --config gcc
+sudo ln -sfT /usr/local/cuda-10.2/ /usr/local/cuda
+pip install torch==1.9.1
+pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.9.1+cu102.html
+
 # streamspot
 python main.py \
 --num_node_types 8 \
