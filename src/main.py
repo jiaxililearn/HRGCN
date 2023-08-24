@@ -17,13 +17,13 @@ import click
 )
 @click.option("--batch_s", default=2000, help="batch size")
 @click.option("--mini_batch_s", default=500, help="mini batch size")
-@click.option("--train_iter_n", default=250, help="max train iter")
+@click.option("--train_iter_n", default=100, help="max train iter")
 @click.option("--num_node_types", default=8, help="num of node types in data")
 @click.option("--num_edge_types", default=1, help="num of edge types in data")
 @click.option("--source_types", default=None, type=str, help="consider Source types")
 @click.option(
     "--input_type",
-    default="single",
+    default="batch",
     type=str,
     help="the way of feeding model. i.e, single | batch",
 )
@@ -45,15 +45,15 @@ import click
     type=int,
     help="evaluation size for each epoch. default None to use all the rest eval dataset in each epoch",
 )
-@click.option("--random_seed", default=32, help="random seed")
-@click.option("--trainer_version", default=0, help="trainer version")
-@click.option("--model_version", default=3, help="train with model version")
+@click.option("--random_seed", default=36, help="random seed")
+@click.option("--trainer_version", default=2, help="trainer version")
+@click.option("--model_version", default=11, help="train with model version")
 @click.option("--model_sub_version", default=0, help="train with sub model version")
 @click.option("--checkpoint", default=None, type=int, help="model checkpoint to load")
 @click.option("--checkpoint_path", default=None, type=str, help="model checkpoint path")
 @click.option(
     "--embed_activation",
-    default="relu",
+    default="sigmoid",
     type=str,
     help="activation func for embeddings. relu | sigmoid",
 )
@@ -65,7 +65,7 @@ import click
 )
 @click.option(
     "--augmentation_method",
-    default="edge_perturbation",
+    default="all",
     type=str,
     help="graph augment method",
 )
@@ -92,7 +92,7 @@ import click
 )
 @click.option(
     "--replace_edges",
-    default=False,
+    default=True,
     type=bool,
     help="if replacing the old edges with new",
 )
@@ -129,11 +129,11 @@ import click
 # @click.option('--known_abnormal_ratio', default=0.1, type=float, help='ratio of known abnormal graphs to add during semi-svdd training')
 @click.option(
     "--weighted_loss",
-    default="deviation",
+    default="bce",
     type=str,
     help="supervise loss used for training. bce | deviation",
 )
-@click.option("--loss_weight", default=0.5, type=float, help="weight of the bce weight")
+@click.option("--loss_weight", default=0, type=float, help="weight of the bce weight")
 @click.option(
     "--ablation",
     default=None,
@@ -167,16 +167,16 @@ import click
 )
 @click.option(
     "--split_data",
-    default=True,
+    default=False,
     type=bool,
     help="if random split data on train or read from existings",
 )
-@click.option("--sagemaker", default=True, type=bool, help="is it running in SageMaker")
-@click.option("--unzip", default=True, type=bool, help="if unzip feature lists first")
+@click.option("--sagemaker", default=False, type=bool, help="is it running in SageMaker")
+@click.option("--unzip", default=False, type=bool, help="if unzip feature lists first")
 @click.option(
-    "--tolerance", default=3, type=int, help="early stopping criteria tolerance"
+    "--tolerance", default=5, type=int, help="early stopping criteria tolerance"
 )
-@click.option("--s3_stage", default=True, type=bool, help="if stage results to s3")
+@click.option("--s3_stage", default=False, type=bool, help="if stage results to s3")
 @click.option(
     "--s3_bucket",
     default="prod-tpgt-knowledge-lake-sandpit-v1",
