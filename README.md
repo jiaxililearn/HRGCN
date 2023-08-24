@@ -17,6 +17,7 @@ Dependency Libs:
 ### Run the `FlowGraph` Dataset
 ```shell
 # FlowGraph
+cd src/
 python main.py \
 --num_node_types 8 \
 --num_train 375 \
@@ -41,6 +42,7 @@ python main.py \
 ### Run the `TraceLog` Dataset
 ```shell
 # TraceLog
+cd src/
 python main.py \
 --num_node_types 8 \
 --num_edge_types 4 \
