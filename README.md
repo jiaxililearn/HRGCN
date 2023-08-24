@@ -12,6 +12,11 @@ Dependency Libs:
 - torch-geometric
 
 ## Data
+Download datasets at
+- FlowGraph Dataset: https://drive.google.com/file/d/1vDuDe6c76cYz6x2yKaeO2gpsGc7b7yiw/view?usp=sharing
+- TraceLog Dataset: https://drive.google.com/file/d/1IH_GwrbMNl1gm8O6uuTR5qprhdhkISvz/view?usp=sharing
+
+Then, unzip the datasets and put them under `data/` or run the commands with the updated `--data_path` argument.
 
 ## Train and Evaluate
 ### Run the `FlowGraph` Dataset
