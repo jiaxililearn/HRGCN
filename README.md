@@ -61,7 +61,21 @@ python main.py \
 --swap_edge_pct 0.17953551869297305 \
 --loss_weight 0.0009732460622703387 \
 --model_path ../model/model_save_tralog \
---data_path ../data//ProcessedData_HetGCN \
+--data_path ../data//ProcessedData_HetGCN 
 ```
+
+## Abalation Study
+Use the `--ablation` flag to run with each abalation setup. I.e.,
+- no-edge-relation
+- no-node-relation
+- no-edge-node-relation
+
+```shell
+python main.py \
+...
+--ablation no-edge-relation \
+...
+```
+
 
 ## Citation
