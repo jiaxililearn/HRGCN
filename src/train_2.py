@@ -12,7 +12,6 @@ from tqdm import tqdm
 import random
 import pickle
 
-from data_loader_origin import EventGraphDataset
 from data_loader import HetGCNEventGraphDataset
 from data_loader_cmu import CMUGraphDataset
 from graph_augmentation import GraphAugmentator

@@ -16,7 +16,7 @@ python main.py \
 --edge_addition_pct 0.39185763245124894 \
 --swap_node_pct 0.5266846615473234 \
 --loss_weight 0.2129864286429184 \
---model_path ../model/model_save_streamspot_gcn11 \
+--model_path ../model/model_save_streamspot \
 --data_path ../data//ProcessedData_streamspot
 
 # Tralog
@@ -39,5 +39,5 @@ python main.py \
 --swap_node_pct 0.10941908541074977 \
 --swap_edge_pct 0.17953551869297305 \
 --loss_weight 0.0009732460622703387 \
---model_path ../model/model_save_tralog_gcn11_all \
+--model_path ../model/model_save_tralog \
 --data_path ../data//ProcessedData_HetGCN \
