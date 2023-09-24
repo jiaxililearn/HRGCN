@@ -86,7 +86,7 @@ python main.py \
 
 
 ## Citation
-```
+```bibtex
 @inproceedings{li2023hrgcn,
   title={HRGCN: Heterogeneous Graph-level Anomaly Detection with Hierarchical Relation-augmented Graph Neural Networks},
   author={Li, Jiaxi and Pang, Guansong and Chen, Ling and  Namazi-Rad, Mohammad-Reza},
